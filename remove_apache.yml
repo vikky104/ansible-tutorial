@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove text-based browser 
+    apt: name=lynx state=absent
+
+  - name: remove the apache2 package
+    apt:
+      name: apache2
+      state: absent
+      update_cache: yes
